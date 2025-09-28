@@ -9,12 +9,12 @@ TSIZE=$(($OFFSET + $SIZE))
 
 if [ "$ARCH" = "02" ]
 then
-    echo "Patching 64bits ELF"
+    echo "Patching 64-bits ELF"
     dd if=/dev/zero of=$1 bs=1 count=2 seek=$((0x3c)) conv=notrunc 2> /dev/null
     dd if=/dev/zero of=$1 bs=1 count=8 seek=$((0x28)) conv=notrunc 2> /dev/null
     dd if=/dev/zero of=$1 bs=1 count=2 seek=$((0x3e)) conv=notrunc 2> /dev/null
 else
-    echo "Patching 32 bits ELF"
+    echo "Patching 32-bits ELF"
     dd if=/dev/zero of=$1 bs=1 count=2 seek=$((0x30)) conv=notrunc 2> /dev/null
     dd if=/dev/zero of=$1 bs=1 count=4 seek=$((0x20)) conv=notrunc 2> /dev/null
     dd if=/dev/zero of=$1 bs=1 count=2 seek=$((0x32)) conv=notrunc 2> /dev/null    
