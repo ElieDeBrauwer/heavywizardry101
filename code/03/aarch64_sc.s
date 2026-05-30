@@ -8,4 +8,4 @@ _start:
 	svc #0
 
 msg:
-.asciz "/bin/bash"
+.asciz "/bin/true"
