@@ -11,6 +11,7 @@ RUN apt install -y \
 	gcc-mipsel-linux-gnu \
 	gcc-riscv64-linux-gnu \
 	gcc-x86-64-linux-gnu \
+    gdb \
 	gosu \
 	nasm \
     qemu-user \
