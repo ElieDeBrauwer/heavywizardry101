@@ -2,6 +2,7 @@ FROM debian:13
 RUN apt update && apt upgrade -y
 RUN apt install -y \
 	build-essential \
+    file \
 	gcc-arm-linux-gnueabi \
 	gcc-aarch64-linux-gnu \
 	gcc-mips-linux-gnu \
@@ -12,6 +13,7 @@ RUN apt install -y \
 	gcc-x86-64-linux-gnu \
 	gosu \
 	nasm \
+    qemu-user \
 	sudo && \
 	rm -rf /var/lib/apt/lists/*
 
