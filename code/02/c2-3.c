@@ -3,7 +3,7 @@
 #ifdef MIPS
 void __start (void)
 #else
-__attribute((naked)) void _start (void)
+void _start (void)
 #endif
 {
 	register int a = 10;

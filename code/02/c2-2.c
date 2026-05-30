@@ -1,14 +1,8 @@
 #include <unistd.h>
-
-#ifdef MIPS
-void __start (void)
-#else
-void _start (void)
-#endif
+int main (void)
 {
-	register int a = 10;
-	register int b = 20;
-	a +=b;
-
-	_exit (a);
+    register int a = 10;
+    register int b = 20;
+    a = a + b;
+    _exit (a);
 }
