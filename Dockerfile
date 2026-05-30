@@ -14,6 +14,7 @@ RUN apt install -y \
 	gosu \
 	nasm \
     qemu-user \
+    strace \
 	sudo && \
 	rm -rf /var/lib/apt/lists/*
 
