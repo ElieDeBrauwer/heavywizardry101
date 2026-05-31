@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+char *gets(char *s);
+
 int unlock_juicy = 0;
 
 void juicy () {
@@ -25,4 +27,3 @@ int main (int argc, char *argv[]) {
   auth ();
   if (unlock_juicy == 1) juicy (); else puts (":(. Bad Luck. Keep Trying");
 }
-
