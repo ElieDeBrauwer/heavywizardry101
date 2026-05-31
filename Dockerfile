@@ -12,6 +12,7 @@ RUN apt install -y \
 	gcc-riscv64-linux-gnu \
 	gcc-x86-64-linux-gnu \
     gdb \
+    git \
 	gosu \
 	nasm \
     qemu-user \
@@ -19,6 +20,8 @@ RUN apt install -y \
 	sudo && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://git.savannah.nongnu.org/git/netkitty.git
+RUN cd netkitty && make && make install && cd .. && rm -Rf netkitty
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh

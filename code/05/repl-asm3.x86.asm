@@ -1,11 +1,10 @@
-	;; Select file
-	
-        global    _start
+    global    _start
 	extern    p4w_write
 	extern    p4w_read	
 	extern    p4w_exit
-	
-        section   .text
+
+	;; --------------------------
+    section   .text
 _start:
 
 	;; Show prompt
@@ -14,6 +13,7 @@ _start:
 	mov rdx, prompt_len
 	call p4w_write
 
+    ;; Initialize the buffer using string instructions
 	xor al,al
 	mov rcx,1024/8
 	mov rdi, input
@@ -45,4 +45,3 @@ prompt:	 db "$ ", 0x00
 prompt_len EQU $-prompt
 input_len EQU 1024
 input:	times 1024 db 0
-

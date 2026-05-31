@@ -3,8 +3,7 @@
 	.global p4w_read
 	.global p4w_close
 	.global p4w_open
-	
-	
+
 p4w_write:
 	mov %r7, $0x04
 	swi $0
@@ -30,4 +29,3 @@ p4w_close:
 	mov %r7 ,$0x06
 	swi $0
 	bx lr
-	

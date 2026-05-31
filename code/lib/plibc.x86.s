@@ -28,4 +28,3 @@ p4w_exit:
 	mov $0x3c, %eax
 	syscall
 	ret
-

@@ -30,20 +30,16 @@ continue:
 	bl p4w_write
 
 	#-----------------------
-	
-
 
 	
 	mov x2, x0
 	mov x0, 1
 	bl p4w_write
 	
-	
 	ldrb w2, [x1]
 	cmp w2, 113
 	beq done
 
-	
 	b _start
 
 done:	
@@ -62,4 +58,3 @@ input:
 	.fill 1024
 input_end = . - 1
 input_len = 1024
-	

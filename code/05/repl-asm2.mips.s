@@ -30,15 +30,11 @@ ini0:
 
 end:
 
-
-	
 	li $a2, input_len
 	li $a0, 1
 	la $a1, input
 	jal p4w_write
 
-
-	
 	j __start
 	
 done:	
@@ -57,4 +53,3 @@ input:
 	.fill 1024
 input_end = . - 1
 input_len = 1024
-	

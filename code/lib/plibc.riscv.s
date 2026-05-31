@@ -8,7 +8,6 @@ p4w_write:
 	li a7, 64
 	j do_syscall
 
-
 p4w_read:	
 	li a7, 63
 	j do_syscall
@@ -24,8 +23,6 @@ p4w_open:
 p4w_exit:
 	li a7, 94
 
-
 do_syscall:
 	ecall
 	ret   # jalr x0, x1, 0
-	

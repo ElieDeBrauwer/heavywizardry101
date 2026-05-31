@@ -3,8 +3,7 @@
 	.global p4w_read
 	.global p4w_close
 	.global p4w_openat
-	
-	
+
 p4w_write:
 	mov x8, 0x40
 	svc 0
@@ -30,5 +29,3 @@ p4w_close:
 	mov x8 , 0x39
 	svc 0
 	ret
-
-	

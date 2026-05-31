@@ -1,13 +1,12 @@
-	;; Select file
-	
-        global    _start
+    global    _start
 	extern    p4w_write
 	extern    p4w_read	
 	extern    p4w_exit
-	
-        section   .text
-_start:
 
+    ;; --------------------------
+    section   .text
+
+_start:
 	;; Show prompt
 	mov rdi, 1
 	mov rsi, prompt
@@ -36,8 +35,8 @@ done:
 	
 	;; --------------------------
 	section .data
+
 prompt:	 db "$ ", 0x00
 prompt_len EQU $-prompt
 input_len EQU 1024
 input:	times 1024 db 0
-

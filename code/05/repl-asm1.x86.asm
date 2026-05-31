@@ -1,11 +1,10 @@
-	;; Select file
-	
-        global    _start
+    global    _start
 	extern    p4w_write
 	extern    p4w_read	
 	extern    p4w_exit
-	
-        section   .text
+
+	;; --------------------------
+    section   .text
 _start:
 
 	;; Show prompt
@@ -15,29 +14,25 @@ _start:
 	call p4w_write
 
 
-;; 	;; Initialise buffer
+;; 	;; Initialise buffer - counting upwards
 ;; 	mov rcx,0
 ;; init0:	mov BYTE [input+rcx], 0
 ;; 	inc rcx
 ;; 	cmp rcx, 1024
 ;; 	jnz init0
 
+    ;; Initialize buffer - couting downwards
 	mov rcx,1025
 init0:	dec rcx
 	mov BYTE[input+rcx], 0
 	jnz init0
 
-	
 	;; Read Input
 	mov rdi, 0
 	mov rsi, input
 	mov rdx, 1024
 	call p4w_read
 
-
-
-
-	
 	;; Print Input
 	mov rdi, 1
 	mov rsi, input
@@ -58,4 +53,3 @@ prompt:	 db "$ ", 0x00
 prompt_len EQU $-prompt
 input_len EQU 1024
 input:	times 1024 db 0
-

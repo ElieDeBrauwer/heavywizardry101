@@ -8,9 +8,25 @@ _start:
 	mov %r2, #len
 	bl p4w_write
 
+	# Initialise input
+	eor %r0, %r0 
+	ldr %r4,=input
+	mov %r5, $1024
+
+	# Empty buffer
+ini0:
+	cmp %r5, $0
+	ble end0
+	sub %r5,%r5,$1
+	#str %r0, [%r4, %r5]
+	str %r0, [%r4], $1
+
+	b ini0
+end0:	
 
     # Read user input
-	mov %r0, $0
+	# mov %r0, $0
+	eor %r0, %r0
 	ldr %r1, =input
 	mov %r2, #input_len
 	bl p4w_read

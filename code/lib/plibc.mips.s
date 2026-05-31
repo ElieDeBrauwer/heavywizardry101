@@ -3,8 +3,7 @@
 	.global p4w_read
 	.global p4w_close
 	.global p4w_open
-	
-	
+
 p4w_write:
 	li $2, 4004
 	j do_syscall

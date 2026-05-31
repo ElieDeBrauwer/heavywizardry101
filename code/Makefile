@@ -1,4 +1,4 @@
-SUBDIRS = 01 02 03 04
+SUBDIRS = 01 02 03 04 05
 
 .PHONY: all clean $(SUBDIRS)
 
