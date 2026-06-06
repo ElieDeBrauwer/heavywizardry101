@@ -17,7 +17,8 @@ RUN apt install -y \
 	nasm \
     qemu-user \
     strace \
-	sudo && \
+	sudo \
+    tmux && \
 	rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://git.savannah.nongnu.org/git/netkitty.git
