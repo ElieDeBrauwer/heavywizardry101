@@ -15,6 +15,7 @@ RUN apt install -y \
     git \
 	gosu \
 	nasm \
+    netcat-openbsd \
     qemu-user \
     strace \
 	sudo \
