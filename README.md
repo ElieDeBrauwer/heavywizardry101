@@ -13,7 +13,7 @@ purpose to track some of my experiments while working through the book.
 
 ## Requirements
 
-You need to install docker in your machine in order to install the development environment. 
+You need to install docker on your machine in order to install the development environment. 
 
 ## Development Environment 
 

@@ -87,11 +87,9 @@ int main(int argc, char *argv[]) {
 
     if ((s = socket(AF_INET, SOCK_STREAM, 0)) < 0) DIE("socket:");
 
-    /* OPTIONAL */
     /* Set reuse address/port socket option */
     int ops = 1;
     setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &ops, sizeof(ops));
-    /* OPTIONAL */
 
     if (bind(s, (struct sockaddr *) &server, len) < 0) DIE("bind:");
     listen(s, 10);
