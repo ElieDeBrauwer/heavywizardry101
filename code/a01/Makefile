@@ -4,6 +4,9 @@ TARGETS = x86.hello x86.hi riscv.hello riscv.hi
 
 all: $(TARGETS)
 
+clean:
+	rm -f *.o $(TARGETS)
+
 riscv.hello: riscv.hello.s
 	riscv64-linux-gnu-as -o $@.o $<
 	riscv64-linux-gnu-ld -o $@ $@.o -znoseparate-code
@@ -24,6 +27,3 @@ x86.hi: x86.hi.asm
 	nasm -f bin -o $@ $?
 	chmod +x $@
 	./$@
-
-clean: 
-	rm -f x86.hello x86.hi riscv.hello riscv.hi riscv.hi.raw *o
