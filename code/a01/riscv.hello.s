@@ -8,9 +8,8 @@ _start:
 	li a2, 13
 	ecall
 
-	li a0,42
+	li a0,0
 	li a7,93
 	ecall
 msg:
 	.asciz "Hello World!\n"
-
